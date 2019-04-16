@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person.js';  
+import Person from '../Person/Person.js';  
+import Cockpit from '../Cockpit/Cockpit.js';
 
 class App extends Component {
 	state = {
@@ -64,15 +65,16 @@ class App extends Component {
   			style.background = 'red';
   		}
 
-    return (
-      <div className="App">
-      	<button 
-      		style={style}
-      		onClick={this.togglePersonHandler}>toggle person
-      	</button>	
-      	{persons}
-      </div>
-    );
+    	return (
+      		<div className="App">
+      		<button style={style} onClick={this.togglePersonHandler}>toggle person </button>
+      		<Cockpit title={this.props.appTitle}
+          			   showPersons={this.state.showPersons}
+          			   person={this.state.person}
+          			   clicked={this.togglePersonsHandler}/>
+      		{persons}
+      		</div>
+    	);
   }
 }
 
