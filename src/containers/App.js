@@ -13,33 +13,45 @@ class App extends Component {
 		showPersonPane: false
 	}
   
-  	switchNameHandler = () => {
-  		//console.log("Was Clicked!!")
-  		this.setState({
-  			person: [
-				{ name: 'sub', age: '1'},
-				{ name: 'Manu', age: '1'},
-				{ name: 'Stephanie', age: '1'}
-			]
-  		});
-  	}
+  switchNameHandler = () => {
+  	//console.log("Was Clicked!!")
+  	this.setState({
+  		person: [
+			{ name: 'sub', age: '1'},
+			{ name: 'Manu', age: '1'},
+			{ name: 'Stephanie', age: '1'}
+		]
+  	});
+  }
 
-    togglePersonHandler = ()  => {
-  		const showPersonPane = this.state.showPersonPane;
-  		this.setState({
-  			showPersonPane : !showPersonPane
-  		})
-  	}
+   togglePersonHandler = ()  => {
+  	const showPersonPane = this.state.showPersonPane;
+  	this.setState({
+  		showPersonPane : !showPersonPane
+  	})
+  }
 
-  	deletePersonHandler = (personIndex) => {
-  		const person = [...this.state.person]; 
+  deletePersonHandler = (personIndex) => {
+  	const person = [...this.state.person]; 
 
-  		person.splice(personIndex, 1);
+  	person.splice(personIndex, 1);
 
-  		this.setState({
-  			person: person
-  		});
-  	}
+  	this.setState({
+  		person: person
+  	});
+  }
+
+  componentDidMount() {
+    console.log("Component Did Mount");
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log("component Did Update");
+  }
 
  	render() {
  		const style = {
