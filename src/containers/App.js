@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return true;
+    return false;
   }
 
   componentDidUpdate() {
