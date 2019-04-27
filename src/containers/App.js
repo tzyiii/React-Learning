@@ -46,11 +46,15 @@ class App extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return false;
+    return true;
   }
 
   componentDidUpdate() {
     console.log("component Did Update");
+  }
+
+  componentWillUnmount() {
+    console.log("component will component Will Unmount");
   }
 
  	render() {
