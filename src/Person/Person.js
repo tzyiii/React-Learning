@@ -1,6 +1,7 @@
 import React from 'react';
 import './Person.css';
 import Aux from '../hoc/Aux';
+import PropTypes from 'prop-types';
 
 const person = (props) => {
 	return (
@@ -11,5 +12,13 @@ const person = (props) => {
         </React.Fragment>
 	)
 };
+
+person.propTypes = {
+	click: PropTypes.func,
+	name: PropTypes.string,
+	age: PropTypes.number,
+	changed: PropTypes.func
+}
+
 
 export default person;
