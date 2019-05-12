@@ -8,9 +8,9 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
 const INGREDIENTS_PRICES = {
     salad: 0.5,
-    cheese: 0.4,
-    meat: 1.3,
-    bacon: 0.7
+    cheese: 0.3,
+    meat: 0.7,
+    bacon: 0.7,
 }
 
 class BurgerBuilder extends Component {
@@ -26,7 +26,7 @@ class BurgerBuilder extends Component {
             meat: 0
         },
 
-        totalPrice: 4
+        totalPrice: 4,
     }
 
     addIngredientHandler = (type) => {
@@ -46,15 +46,15 @@ class BurgerBuilder extends Component {
         });
     }
 
-    removeIngredientHandler = () => {
+    removeIngredientHandler = (type) => {
 
     }
 
     render() {
         return (
             <Aux>
-        ==       <Burger ingredients={this.state.ingredients} />
-                <BuildControls/>
+                <Burger ingredients={this.state.ingredients}/>
+                <BuildControls ingredientAdded = {this.addIngredientHandler}/>
             </Aux>
         );
     }
